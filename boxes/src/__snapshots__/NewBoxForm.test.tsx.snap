@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches data-entered snapshot 1`] = `
+<div>
+  <div
+    class="NewBoxForm"
+  >
+    <form
+      class="NewBoxForm-form"
+    >
+      <div>
+        <label
+          for="newBox-height"
+        >
+          Height
+        </label>
+        <input
+          id="newBox-height"
+          name="height"
+          value="8"
+        />
+      </div>
+      <div>
+        <label
+          for="newBox-width"
+        >
+          Width
+        </label>
+        <input
+          id="newBox-width"
+          name="width"
+          value=""
+        />
+      </div>
+      <div>
+        <label
+          for="newBox-backgroundColor"
+        >
+          Background Color
+        </label>
+        <input
+          id="newBox-backgroundColor"
+          name="backgroundColor"
+          value="firebrick"
+        />
+      </div>
+      <button
+        class="NewBoxForm-addBtn"
+      >
+        Add a new box!
+      </button>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`matches initial form snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="NewBoxForm"
+  >
+    <form
+      class="NewBoxForm-form"
+    >
+      <div>
+        <label
+          for="newBox-height"
+        >
+          Height
+        </label>
+        <input
+          id="newBox-height"
+          name="height"
+          value=""
+        />
+      </div>
+      <div>
+        <label
+          for="newBox-width"
+        >
+          Width
+        </label>
+        <input
+          id="newBox-width"
+          name="width"
+          value=""
+        />
+      </div>
+      <div>
+        <label
+          for="newBox-backgroundColor"
+        >
+          Background Color
+        </label>
+        <input
+          id="newBox-backgroundColor"
+          name="backgroundColor"
+          value=""
+        />
+      </div>
+      <button
+        class="NewBoxForm-addBtn"
+      >
+        Add a new box!
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;

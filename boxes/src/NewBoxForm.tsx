@@ -13,12 +13,16 @@ import { NewBoxFormProps, FormDataInterface } from "./Interfaces";
  * BoxList -> NewBoxForm
  */
 
-function NewBoxForm({ createBox }: NewBoxFormProps) {
+
+// function NewBoxForm({ createBox }: NewBoxFormProps) {
+// function NewBoxForm({ createBox }: { createBox: Function; }) {
+function NewBoxForm(props: { createBox: Function; }) {
   const [formData, setFormData] = useState<FormDataInterface>({
     height: "",
     width: "",
     backgroundColor: "",
   });
+  const [dataIsInvalid, setDataIsInvalid] = useState(false);
 
   /** Update form input. */
   function handleChange(evt: React.ChangeEvent<HTMLInputElement>) {
@@ -29,16 +33,30 @@ function NewBoxForm({ createBox }: NewBoxFormProps) {
     }));
   }
 
+
   /** Submit form: call function from parent & clear inputs. */
   function handleSubmit(evt: React.FormEvent) {
     evt.preventDefault();
+
+    if (
+      formData.height === "" ||
+      formData.width === "" ||
+      formData.backgroundColor === ""
+    ) {
+      setDataIsInvalid(true);
+      return;
+    }
+
     createBox({ ...formData, id: uuid() });
     setFormData({ height: "", width: "", backgroundColor: "" });
   }
 
+
+  if (dataIsInvalid) return <p className="bad">"BAD DATA"</p>;
+
   return (
     <div className="NewBoxForm">
-      <form onSubmit={handleSubmit}>
+      <form className="NewBoxForm-form" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="newBox-height">Height</label>
           <input

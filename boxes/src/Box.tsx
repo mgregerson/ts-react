@@ -14,7 +14,7 @@ import { BoxProps } from "./Interfaces";
 
 // Write this as an extension of BoxInterface from BoxList.tsx
 
-function Box({ id, width = 5, height = 5, backgroundColor, remove }: BoxProps) {
+function Box({ id, width = 5, height = 5, backgroundColor = "green", remove }: BoxProps) {
   /** Remove a box. */
   function handleRemove() {
     remove(id);
